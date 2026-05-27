@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Irfaan Muhammed — Data Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f2744;--navy-mid:#1a3a5e;--accent:#2563eb;--accent-light:#eff6ff;
+  --border:#e2e8f0;--text:#1e293b;--muted:#64748b;--bg:#ffffff;--surface:#f8fafc;
+}
+body{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.6}
+nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{color:#fff;font-family:'DM Serif Display',serif;font-size:20px}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.hero{background:var(--navy);padding:3.5rem 2.5rem 4rem;display:flex;gap:2rem;align-items:flex-start}
+.hero-eyebrow{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:.75rem}
+.hero-name{font-family:'DM Serif Display',serif;font-size:50px;color:#fff;line-height:1.05;margin-bottom:.5rem}
+.hero-title{font-size:17px;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:1.5rem}
+.hero-bio{font-size:14px;color:rgba(255,255,255,.5);max-width:500px;line-height:1.75;margin-bottom:1.75rem}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-p{background:var(--accent);color:#fff;border:none;padding:.6rem 1.3rem;border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-o{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.25);padding:.6rem 1.3rem;border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:inline-block}
+.avatar{width:108px;height:108px;border-radius:50%;background:var(--navy-mid);border:3px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:40px;color:rgba(255,255,255,.4);flex-shrink:0}
+.stats{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.07);padding:.9rem 2.5rem;display:flex;gap:2.5rem;flex-wrap:wrap}
+.stat{color:rgba(255,255,255,.5);font-size:12px;display:flex;align-items:center;gap:.5rem}
+.stat strong{color:#fff;font-size:15px;font-weight:500}
+section{padding:2.5rem 2.5rem}
+section+section{border-top:1px solid var(--border)}
+.sec-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:500}
+.sec-title{font-family:'DM Serif Display',serif;font-size:28px;color:var(--text);margin-bottom:1.5rem;line-height:1.15}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.75rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem}
+.skill-icon{font-size:22px;margin-bottom:.55rem}
+.skill-name{font-size:13px;font-weight:500;margin-bottom:.2rem}
+.skill-tools{font-size:12px;color:var(--muted);line-height:1.5}
+.bar-wrap{margin-top:.6rem;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.bar{height:100%;background:var(--accent);border-radius:2px}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+.pcard{border:1px solid var(--border);border-radius:12px;padding:1.25rem;background:var(--bg);transition:border-color .2s}
+.pcard:hover{border-color:var(--accent)}
+.ptag{display:inline-block;font-size:10px;letter-spacing:.8px;text-transform:uppercase;font-weight:500;padding:3px 8px;border-radius:4px;margin-bottom:.75rem}
+.tag-b{background:var(--accent-light);color:var(--accent)}
+.tag-g{background:#f0fdf4;color:#15803d}
+.tag-a{background:#fffbeb;color:#b45309}
+.pname{font-size:15px;font-weight:500;margin-bottom:.4rem;line-height:1.3}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+.pmeta{display:flex;gap:.4rem;flex-wrap:wrap}
+.pill{font-size:11px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px 9px;color:var(--muted)}
+.plinks{display:flex;gap:.75rem;margin-top:.9rem;border-top:1px solid var(--border);padding-top:.75rem}
+.plinks a{font-size:12px;color:var(--accent);text-decoration:none;font-weight:500}
+.tabs{display:flex;gap:.25rem;border-bottom:1px solid var(--border);margin-bottom:1.25rem}
+.tab{font-size:13px;font-weight:500;padding:.5rem 1rem;cursor:pointer;color:var(--muted);border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;font-family:'DM Sans',sans-serif;transition:all .2s}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.exp-item{display:flex;gap:1rem;margin-bottom:1.5rem}
+.exp-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px;flex-shrink:0}
+.exp-role{font-size:14px;font-weight:500}
+.exp-org{font-size:13px;color:var(--muted);margin-bottom:.25rem}
+.exp-dur{font-size:11px;color:var(--muted);letter-spacing:.3px}
+.exp-ul{margin-top:.5rem;padding-left:1.1rem}
+.exp-ul li{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:.2rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.ccard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem;display:flex;align-items:center;gap:.75rem}
+.cicon{font-size:22px;flex-shrink:0}
+.clabel{font-size:11px;color:var(--muted);margin-bottom:2px}
+.cval{font-size:13px;font-weight:500}
+footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:1.25rem;font-size:12px}
+footer strong{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Irfaan Muhammed</span>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">Data & Analytics Portfolio</p>
+    <h1 class="hero-name">Irfaan Muhammed</h1>
+    <p class="hero-title">Data Analyst · VIT Graduate · ECE → Data</p>
+    <p class="hero-bio">Data Analyst at Digitide with a B.Tech from VIT. Transitioned from Electronics & Communications into data — combining engineering rigour with analytical thinking. Skilled across SQL, Python, Power BI, and cloud platforms, with hands-on experience turning raw data into business decisions.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-p">View Projects</a>
+      <a href="https://github.com/irfaanmuhammed915-cmd" target="_blank" rel="noopener" class="btn-o">GitHub Profile</a>
+    </div>
+  </div>
+  <div class="avatar">I</div>
+</div>
+
+<div class="stats">
+  <div class="stat"><strong>1+</strong> year experience</div>
+  <div class="stat"><strong>5</strong> certifications</div>
+  <div class="stat"><strong>8+</strong> tools &amp; technologies</div>
+  <div class="stat"><strong>Bengaluru</strong> · Flexible on location</div>
+</div>
+
+<section id="skills">
+  <p class="sec-label">Capabilities</p>
+  <h2 class="sec-title">Skills &amp; tools</h2>
+  <div class="skill-grid">
+    <div class="skill-card"><div class="skill-icon">🗄️</div><p class="skill-name">SQL &amp; databases</p><p class="skill-tools">PostgreSQL · MySQL · BigQuery · dbt</p><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">🐍</div><p class="skill-name">Python</p><p class="skill-tools">Pandas · NumPy · Scikit-learn · Matplotlib</p><div class="bar-wrap"><div class="bar" style="width:82%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">📊</div><p class="skill-name">BI &amp; visualisation</p><p class="skill-tools">Tableau · Power BI · Looker · Plotly</p><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">🤖</div><p class="skill-name">Machine learning</p><p class="skill-tools">Classification · Regression · XGBoost · SHAP</p><div class="bar-wrap"><div class="bar" style="width:70%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">⚙️</div><p class="skill-name">Data engineering</p><p class="skill-tools">Apache Spark · Airflow · ETL pipelines</p><div class="bar-wrap"><div class="bar" style="width:62%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">☁️</div><p class="skill-name">Cloud &amp; tools</p><p class="skill-tools">GCP · AWS basics · Git · Jupyter</p><div class="bar-wrap"><div class="bar" style="width:68%"></div></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="sec-label">Portfolio</p>
+  <h2 class="sec-title">Featured projects</h2>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'all')">All</button>
+    <button class="tab" onclick="switchTab(this,'analysis')">Analysis &amp; BI</button>
+    <button class="tab" onclick="switchTab(this,'ml')">Machine learning</button>
+    <button class="tab" onclick="switchTab(this,'eng')">Data engineering</button>
+  </div>
+  <div id="all-panel" class="tab-panel active">
+    <div class="project-grid">
+      <div class="pcard" data-cat="analysis" style="border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.07)"><span class="ptag tag-b">Analysis &amp; BI</span><span style="float:right;font-size:10px;background:#dcfce7;color:#15803d;border:1px solid #bbf7d0;border-radius:4px;padding:2px 7px;font-weight:600;letter-spacing:.4px">LIVE</span><p class="pname">E-Commerce Sales Analysis</p><p class="pdesc">End-to-end analysis of e-commerce transactional data — revenue trends, customer segmentation, cohort retention, and product performance. Built with Python, Pandas, and SQL across 200k+ order lines.</p><div class="pmeta"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">Pandas</span><span class="pill">Power BI</span></div><div class="plinks"><a href="https://github.com/irfaanmuhammed915-cmd/ecommerce-analysis" target="_blank" rel="noopener">GitHub →</a></div></div>
+      <div class="pcard" data-cat="ml"><span class="ptag tag-a">Machine learning</span><p class="pname">Customer churn prediction</p><p class="pdesc">XGBoost classifier trained on telecom data achieving 89% AUC-ROC. Feature engineering, SHAP explainability, and a Streamlit app to score new customers in real time.</p><div class="pmeta"><span class="pill">Python</span><span class="pill">XGBoost</span><span class="pill">SHAP</span><span class="pill">Streamlit</span></div><div class="plinks"><a href="#">GitHub →</a><a href="#">Live app →</a></div></div>
+      <div class="pcard" data-cat="eng"><span class="ptag tag-g">Data engineering</span><p class="pname">Retail ETL pipeline</p><p class="pdesc">Airflow-orchestrated pipeline ingesting daily POS data into BigQuery via dbt transformations. Handles schema evolution, deduplication, and SLA alerting.</p><div class="pmeta"><span class="pill">Airflow</span><span class="pill">dbt</span><span class="pill">BigQuery</span></div><div class="plinks"><a href="#">GitHub →</a></div></div>
+      <div class="pcard" data-cat="analysis"><span class="ptag tag-b">Analysis &amp; BI</span><p class="pname">Supply chain analytics</p><p class="pdesc">Exploratory analysis of supplier lead times and stockout events. Identified ₹4.2M in avoidable costs through reorder-point modelling and Tableau visualisations.</p><div class="pmeta"><span class="pill">Python</span><span class="pill">Tableau</span><span class="pill">SQL</span></div><div class="plinks"><a href="#">GitHub →</a><a href="#">Dashboard →</a></div></div>
+      <div class="pcard" data-cat="ml"><span class="ptag tag-a">Machine learning</span><p class="pname">Sentiment analysis — product reviews</p><p class="pdesc">Fine-tuned BERT model on 50k Amazon reviews. Deployed as a REST API on GCP Cloud Run, integrated with a Looker Studio report for product teams.</p><div class="pmeta"><span class="pill">Python</span><span class="pill">BERT</span><span class="pill">GCP</span><span class="pill">FastAPI</span></div><div class="plinks"><a href="#">GitHub →</a></div></div>
+    </div>
+  </div>
+  <div id="analysis-panel" class="tab-panel"><div class="project-grid"></div></div>
+  <div id="ml-panel" class="tab-panel"><div class="project-grid"></div></div>
+  <div id="eng-panel" class="tab-panel"><div class="project-grid"></div></div>
+</section>
+
+<section id="experience">
+  <p class="sec-label">Background</p>
+  <h2 class="sec-title">Experience, Education &amp; Certifications</h2>
+  <div class="exp-item">
+    <div class="exp-dot"></div>
+    <div>
+      <p class="exp-role">Associate — Data Analyst</p>
+      <p class="exp-org">Digitide · Bengaluru, Karnataka</p>
+      <p class="exp-dur">Jun 2025 – Present · 1 year</p>
+      <ul class="exp-ul">
+        <li>Analysing business data to surface actionable insights for product and operations teams</li>
+        <li>Building and maintaining dashboards and reports for key stakeholders</li>
+        <li>Working with structured datasets using SQL and Python for data validation and transformation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp-item">
+    <div class="exp-dot"></div>
+    <div>
+      <p class="exp-role">Intern</p>
+      <p class="exp-org">Keltron KSG · Kozhikode, Kerala</p>
+      <p class="exp-dur">Oct 2023 · 1 month</p>
+      <ul class="exp-ul">
+        <li>Gained hands-on exposure to data systems and operational workflows</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="sec-label" style="margin-top:1.5rem">Education</p>
+  <div class="exp-item" style="margin-top:.75rem">
+    <div class="exp-dot" style="background:var(--muted)"></div>
+    <div>
+      <p class="exp-role">B.Tech — Electronics and Communications Engineering</p>
+      <p class="exp-org">Vellore Institute of Technology (VIT)</p>
+      <p class="exp-dur">Jul 2021 – Apr 2025</p>
+    </div>
+  </div>
+  <div class="exp-item">
+    <div class="exp-dot" style="background:var(--muted)"></div>
+    <div>
+      <p class="exp-role">Higher Secondary Certificate (HSC)</p>
+      <p class="exp-org">Vels Vidyashram · Chennai</p>
+      <p class="exp-dur">Mar 2021</p>
+    </div>
+  </div>
+
+  <p class="sec-label" style="margin-top:1.5rem">Certifications</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem;margin-top:.75rem">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem"><span style="font-size:18px">🏅</span><div><p style="font-size:13px;font-weight:500">Python (Basic)</p><p style="font-size:11px;color:var(--muted)">HackerRank</p></div></div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem"><span style="font-size:18px">🏅</span><div><p style="font-size:13px;font-weight:500">AWS APAC Solutions Architecture</p><p style="font-size:11px;color:var(--muted)">Job Simulation</p></div></div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem"><span style="font-size:18px">🏅</span><div><p style="font-size:13px;font-weight:500">Data Analytics Job Simulation</p><p style="font-size:11px;color:var(--muted)">Deloitte Australia</p></div></div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem"><span style="font-size:18px">🏅</span><div><p style="font-size:13px;font-weight:500">PHP and MySQL</p><p style="font-size:11px;color:var(--muted)">IIT Bombay</p></div></div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;align-items:center;gap:.6rem"><span style="font-size:18px">🏅</span><div><p style="font-size:13px;font-weight:500">Forest and their Management</p><p style="font-size:11px;color:var(--muted)">Certification</p></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="sec-label">Let's talk</p>
+  <h2 class="sec-title">Get in touch</h2>
+  <div class="contact-grid">
+    <div class="ccard"><div class="cicon">✉️</div><div><p class="clabel">Email</p><p class="cval"><a href="mailto:irfaanmuhammed915@gmail.com" style="color:var(--text);text-decoration:none">irfaanmuhammed915@gmail.com</a></p></div></div>
+    <div class="ccard"><div class="cicon">💼</div><div><p class="clabel">LinkedIn</p><p class="cval"><a href="https://www.linkedin.com/in/irfaan-muhammed-6002b2275/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">linkedin.com/in/irfaan-muhammed</a></p></div></div>
+    <div class="ccard"><div class="cicon">🐙</div><div><p class="clabel">GitHub</p><p class="cval"><a href="https://github.com/irfaanmuhammed915-cmd" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">github.com/irfaanmuhammed915-cmd</a></p></div></div>
+    <div class="ccard"><div class="cicon">📍</div><div><p class="clabel">Location</p><p class="cval">Bengaluru · Flexible</p></div></div>
+    <div class="ccard"><div class="cicon">📞</div><div><p class="clabel">Phone</p><p class="cval"><a href="tel:+919962932920" style="color:var(--text);text-decoration:none">+91 99629 32920</a></p></div></div>
+  </div>
+</section>
+
+<footer>Built by <strong>Irfaan Muhammed</strong> · Data Analyst · 2025</footer>
+
+<script>
+function switchTab(el, key) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  const allCards = document.querySelectorAll('#all-panel .pcard');
+  if (key === 'all') {
+    document.getElementById('all-panel').classList.add('active');
+    return;
+  }
+  const panel = document.getElementById(key + '-panel');
+  panel.classList.add('active');
+  const grid = panel.querySelector('.project-grid');
+  grid.innerHTML = '';
+  allCards.forEach(c => { if (c.dataset.cat === key) grid.appendChild(c.cloneNode(true)); });
+}
+</script>
+</body>
+</html>
